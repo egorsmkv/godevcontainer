@@ -13,7 +13,6 @@ docker build -t yehors/go-devcontainer:1.20 -f alpine.Dockerfile .
 ```bash
 docker login
 
-docker tag b62770adbb09 yehors/go-devcontainer:1.20
 docker push yehors/go-devcontainer:1.20
 ```
 
