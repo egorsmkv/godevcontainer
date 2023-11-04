@@ -1,6 +1,6 @@
 ARG BASEDEV_VERSION=v0.24.0
 ARG ALPINE_VERSION=3.18
-ARG GO_VERSION=1.21
+ARG GO_VERSION=1.20
 ARG GOMODIFYTAGS_VERSION=v1.16.0
 ARG GOPLAY_VERSION=v1.0.0
 ARG GOTESTS_VERSION=v1.6.0
@@ -60,7 +60,7 @@ WORKDIR $GOPATH
 # Install Alpine packages (g++ for race testing)
 RUN apk add -q --update --progress --no-cache g++
 # Shell setup
-COPY shell/.zshrc-specific shell/.welcome.sh /root/
+COPY shell/.zshrc-specific root/
 
 COPY --from=gomodifytags /bin /go/bin/gomodifytags
 COPY --from=goplay  /bin /go/bin/goplay
